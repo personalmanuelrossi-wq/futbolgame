@@ -21,7 +21,8 @@ jobs:
       - name: Configurar Godot Engine (.NET)
         uses: chickensoft-games/setup-godot@v2
         with:
-          version: 4.7.2.stable.mono
+          version: 4.7.2
+          include-mono: true
 
       - name: Exportar Proyecto Xcode desde Godot
         run: |
