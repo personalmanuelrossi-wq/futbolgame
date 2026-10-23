@@ -27,7 +27,8 @@ jobs:
       - name: Exportar Proyecto Xcode desde Godot
         run: |
           mkdir -p build/ios
-godot --headless --export-release "futbol_manu" build/ios/JuremosConGloriaMorir.xcodeproj
+          godot --headless --export-release "futbol_manu" build/ios/JuremosConGloriaMorir.xcodeproj
+
       - name: Compilar archivo IPA sin firmar con Xcode
         run: |
           cd build/ios
