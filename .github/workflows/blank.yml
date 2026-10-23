@@ -24,6 +24,19 @@ jobs:
           version: 4.7.2
           include-mono: true
 
+      - name: Descargar e instalar Plantillas de Exportación de Godot
+        run: |
+          TEMPLATE_DIR="$HOME/Library/Application Support/Godot/export_templates/4.7.2.stable.mono"
+          mkdir -p "$TEMPLATE_DIR"
+          
+          # Descarga las plantillas oficial/mono correspondientes a tu versión
+          curl -LO https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_mono_export_templates.tpz
+          
+          # Extrae los contenidos en el directorio de plantillas de Godot
+          unzip Godot_v4.7.2-stable_mono_export_templates.tpz -d temp_templates
+          mv temp_templates/templates/* "$TEMPLATE_DIR/"
+          rm -rf temp_templates Godot_v4.7.2-stable_mono_export_templates.tpz
+
       - name: Exportar Proyecto Xcode desde Godot
         run: |
           mkdir -p build/ios
