@@ -16,7 +16,7 @@ jobs:
       - name: Configurar Godot Engine
         uses: chickensoft-games/setup-godot@v2
         with:
-          version: 4.3 # <--- Si usas Godot 4.2.1 cambia este número por 4.2.1
+          version: 4.7.2 
 
       - name: Exportar Proyecto Xcode desde Godot
         run: |
